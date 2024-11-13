@@ -60,3 +60,9 @@ h6 {
 #__next {
     isolation: isolate;
 }
+
+body {
+    background-color: #1b1b1b;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
