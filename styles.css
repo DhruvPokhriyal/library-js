@@ -86,4 +86,7 @@ body {
     border: 1px solid black;
     border-radius: 50px;
     height: 250px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
