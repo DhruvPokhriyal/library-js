@@ -62,7 +62,28 @@ h6 {
 }
 
 body {
-    background-color: #1b1b1b;
+    height: 100vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-items: center;
+    background-color: #1b1b1b;
+    width: 100%;
+}
+
+.page {
+    /* color: #ffffff; */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    background-color: #1b1b1b;
+}
+
+.page > div {
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 50px;
+    height: 250px;
 }
