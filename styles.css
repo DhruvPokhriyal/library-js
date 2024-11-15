@@ -104,3 +104,13 @@ body {
     color: var(--spc-col);
     background-color: var(--bg-color) !important;
 }
+
+.title-heading,
+.bname,
+.add-book {
+    font-size: 28px;
+}
+
+.book > .content div:not(.bname) {
+    font-size: 18px;
+}
