@@ -149,3 +149,14 @@ body {
     transform: translateY(-40px);
     box-shadow: 0px 12px 1px var(--read-book);
 }
+
+.add-book {
+    box-shadow: 0 0 0;
+    transition: transform 400ms;
+}
+
+.add-book:hover {
+    background-color: black !important;
+    transform: translateY(-40px);
+    box-shadow: 0px 12px 1px var(--spc-border);
+}
