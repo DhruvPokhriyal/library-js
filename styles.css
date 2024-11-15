@@ -121,3 +121,8 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+
+.title .content .title-img {
+    height: 80px;
+    width: 80px;
+}
