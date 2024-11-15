@@ -61,11 +61,20 @@ h6 {
     isolation: isolate;
 }
 
+:root {
+    --bg-color: #1b1b1b;
+    --spc-border: #7a643e;
+    --spc-col: #f8c56e;
+    --unread-book: #ffffff;
+    --read-book: #ffcb71;
+    --text-col: #000000;
+}
+
 body {
     height: 100vh;
     display: grid;
     align-items: center;
-    background-color: #1b1b1b;
+    background-color: var(--bg-color);
     width: 100%;
 }
 
@@ -78,12 +87,11 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    background-color: #1b1b1b;
+    background-color: var(--bg-color);
 }
 
 .page > div {
-    background-color: #ffffff;
-    border: 1px solid black;
+    background-color: var(--unread-book);
     border-radius: 50px;
     height: 250px;
     display: grid;
@@ -92,7 +100,7 @@ body {
 }
 
 .special {
-    border: 3px solid #7a643e !important;
-    color: #f8c56e;
-    background-color: #1b1b1b !important;
+    border: 3px solid var(--spc-border) !important;
+    color: var(--spc-col);
+    background-color: var(--bg-color) !important;
 }
