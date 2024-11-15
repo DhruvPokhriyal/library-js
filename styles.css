@@ -98,6 +98,8 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 0;
+    transition: transform 0.5s;
 }
 
 .special {
@@ -142,6 +144,8 @@ body {
     fill: var(--spc-col);
 }
 
-.page > div:hover {
+.page > .book:hover {
     background-color: var(--card-hover);
+    transform: translateY(-40px);
+    box-shadow: 0px 12px 1px #141211;
 }
