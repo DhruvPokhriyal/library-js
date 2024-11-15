@@ -122,6 +122,16 @@ body {
     font-style: normal;
 }
 
+.title .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title-heading {
+    align-self: center;
+    margin-top: 20%;
+}
+
 .title .content .title-img {
     height: 80px;
     width: 80px;
