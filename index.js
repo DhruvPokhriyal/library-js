@@ -30,4 +30,5 @@ function addBookToLibrary(bookData) {
 }
 
 let book1 = new book("Harry Potter", "J.K. Rowlings", 255);
-addBookToLibrary(book1);
+myLibrary.push(book1);
+addBookToLibrary(myLibrary[myLibrary.length - 1]);
