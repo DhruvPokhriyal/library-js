@@ -140,3 +140,7 @@ body {
 .title .content .title-img svg {
     fill: var(--spc-col);
 }
+
+.page > div:hover {
+    background-color: #f3f4f6;
+}
