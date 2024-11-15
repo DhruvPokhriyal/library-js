@@ -156,7 +156,12 @@ body {
 }
 
 .add-book:hover {
-    background-color: black !important;
+    background-color: var(--text-col) !important;
     transform: translateY(-40px);
     box-shadow: 0px 12px 1px var(--spc-border);
+}
+
+.add-book-clicked {
+    transform: translateY(40px);
+    box-shadow: 0 0 0;
 }
