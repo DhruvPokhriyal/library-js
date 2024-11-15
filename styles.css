@@ -126,3 +126,7 @@ body {
     height: 80px;
     width: 80px;
 }
+
+.title .content .title-img svg {
+    fill: var(--spc-col);
+}
