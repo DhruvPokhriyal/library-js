@@ -90,3 +90,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.special {
+    border: 3px solid #7a643e !important;
+}
