@@ -109,8 +109,15 @@ body {
 .bname,
 .add-book {
     font-size: 28px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .book > .content div:not(.bname) {
     font-size: 18px;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
