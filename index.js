@@ -51,3 +51,10 @@ for (let container of containers) {
         container.classList.remove("add-book-clicked");
     });
 }
+
+let books = Array.from(document.querySelectorAll(".book"));
+for (let book of books) {
+    book.addEventListener("click", () => {
+        book.classList.toggle("read");
+    });
+}
