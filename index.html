@@ -73,6 +73,27 @@
             </div>
             <div class="add-book special">Add Book</div>
         </div>
+        <dialog id="modal" class="modal">
+            <form method="get">
+                <h3>Add Book</h3>
+                <div class="book-name">
+                    <label for="book-name">Book Name: </label>
+                    <input type="text" id="book-name" name="book-name" />
+                </div>
+                <div class="author-name">
+                    <label for="author-name">Author Name: </label>
+                    <input type="text" id="author-name" name="author-name" />
+                </div>
+                <div class="pages">
+                    <label for="pages">No of Pages: </label>
+                    <input type="number" name="pages" id="pages" />
+                </div>
+                <div class="buttons">
+                    <button type="button">Close</button
+                    ><button type="submit">Add Book</button>
+                </div>
+            </form>
+        </dialog>
         <script src="index.js"></script>
     </body>
 </html>

@@ -58,3 +58,5 @@ for (let book of books) {
         book.classList.toggle("read");
     });
 }
+
+document.querySelector(".modal").showModal();
