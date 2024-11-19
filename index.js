@@ -38,3 +38,16 @@ function addBookToLibrary() {
 let book1 = new book("Harry Potter", "J.K. Rowlings", 255);
 myLibrary.push(book1);
 addBookToLibrary();
+
+let containers = Array.from(document.querySelectorAll(".book,.add-book"));
+for (let container of containers) {
+    container.addEventListener("mousedown", () => {
+        container.classList.add("add-book-clicked");
+    });
+    container.addEventListener("mouseup", () => {
+        container.classList.remove("add-book-clicked");
+    });
+    container.addEventListener("mouseleave", () => {
+        container.classList.remove("add-book-clicked");
+    });
+}

@@ -162,6 +162,6 @@ body {
 }
 
 .add-book-clicked {
-    transform: translateY(40px);
+    transform: translateY(40px) !important;
     box-shadow: 0 0 0;
 }
