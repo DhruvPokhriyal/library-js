@@ -184,6 +184,11 @@ body {
     border-radius: 20px;
 }
 
+.modal::backdrop {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 form {
     display: grid;
     justify-content: center;
