@@ -59,4 +59,11 @@ for (let book of books) {
     });
 }
 
-document.querySelector(".modal").showModal();
+let modal = document.querySelector(".modal");
+
+modal.showModal();
+
+let formClose = document.querySelector(".form-close");
+formClose.addEventListener("click", () => {
+    modal.close();
+});
