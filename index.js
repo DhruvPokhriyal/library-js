@@ -61,9 +61,12 @@ for (let book of books) {
 
 let modal = document.querySelector(".modal");
 
-modal.showModal();
-
 let formClose = document.querySelector(".form-close");
 formClose.addEventListener("click", () => {
     modal.close();
+});
+
+let addBook = document.querySelector(".add-book");
+addBook.addEventListener("click", () => {
+    modal.showModal();
 });
