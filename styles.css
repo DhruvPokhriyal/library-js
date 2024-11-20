@@ -228,6 +228,11 @@ input {
     border-radius: 5px;
 }
 
+input:active,
+input:focus {
+    outline: 1px solid;
+}
+
 button {
     border: none;
     padding: 8px;
