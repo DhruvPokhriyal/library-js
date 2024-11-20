@@ -176,10 +176,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 50%;
-    width: 30%;
+    height: 400px;
+    width: 350px;
     outline: none;
     border: none;
+    background-color: var(--unread-book);
+    border-radius: 20px;
 }
 
 form {
@@ -190,4 +192,27 @@ form {
 
 form > * {
     display: grid;
+    justify-content: center;
+}
+
+form > .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+form h3,
+label,
+button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+input {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5px;
 }
