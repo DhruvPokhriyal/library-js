@@ -177,7 +177,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     height: 400px;
-    width: 350px;
+    width: 320px;
     outline: none;
     border: none;
     background-color: var(--unread-book);
@@ -188,17 +188,19 @@ form {
     display: grid;
     justify-content: center;
     gap: 20px;
+    color: var(--bg-color);
 }
 
 form > * {
     display: grid;
     justify-content: center;
+    gap: 8px;
 }
 
 form > .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 15px !important;
 }
 
 form h3,
@@ -215,4 +217,27 @@ input {
     font-weight: 400;
     font-style: normal;
     padding: 5px;
+    border: none;
+    background-color: #e5e7ec;
+    outline-color: var(--bg-color);
+    border-radius: 5px;
+}
+
+button {
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #e5e7ec;
+}
+
+#submit-button {
+    background-color: var(--read-book);
+}
+
+#submit-button:hover {
+    background-color: #ffbe4c;
+}
+
+button:hover {
+    background-color: #d7dae1;
 }
