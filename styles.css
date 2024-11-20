@@ -181,3 +181,13 @@ body {
     outline: none;
     border: none;
 }
+
+form {
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+}
+
+form > * {
+    display: grid;
+}
