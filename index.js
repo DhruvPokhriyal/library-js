@@ -31,6 +31,20 @@ function addBookToLibrary() {
             bpages.textContent = bookData.pages;
             page.insertBefore(record, addBook);
             loaded.push(bookData);
+            // Separate this part into a different function and then invoke that function
+            record.addEventListener("mousedown", () => {
+                record.classList.add("add-book-clicked");
+            });
+            record.addEventListener("mouseup", () => {
+                record.classList.remove("add-book-clicked");
+            });
+            record.addEventListener("mouseleave", () => {
+                record.classList.remove("add-book-clicked");
+            });
+            // Separate this part as well into a different function and then invoke that function
+            record.addEventListener("click", () => {
+                record.classList.toggle("read");
+            });
         }
     }
 }
@@ -63,10 +77,28 @@ let modal = document.querySelector(".modal");
 
 let formClose = document.querySelector(".form-close");
 formClose.addEventListener("click", () => {
+    // Add clear form function here
     modal.close();
 });
 
 let addBook = document.querySelector(".add-book");
 addBook.addEventListener("click", () => {
     modal.showModal();
+});
+
+const addBookForm = document.querySelector(".add-book-form");
+addBookForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let newBookName = addBookForm.querySelector("#book-name").value;
+    let authorName = addBookForm.querySelector("#author-name").value;
+    let noOfPages = addBookForm.querySelector("#pages").value;
+    if (newBookName == "" || authorName == "" || noOfPages == "") {
+        alert("Fields cannot be left empty");
+    } else {
+        let newBook = new book(newBookName, authorName, noOfPages);
+        myLibrary.push(newBook);
+        addBookToLibrary();
+    }
+    addBookForm.reset();
+    modal.close();
 });
