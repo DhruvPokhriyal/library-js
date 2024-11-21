@@ -78,6 +78,7 @@ let modal = document.querySelector(".modal");
 let formClose = document.querySelector(".form-close");
 formClose.addEventListener("click", () => {
     // Add clear form function here
+    document.querySelector(".add-book-form").reset();
     modal.close();
 });
 
