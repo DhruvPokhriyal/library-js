@@ -51,10 +51,6 @@ function addBookToLibrary() {
     }
 }
 
-let book1 = new book("Harry Potter", "J.K. Rowlings", 255);
-myLibrary.push(book1);
-addBookToLibrary();
-
 let containers = Array.from(document.querySelectorAll(".book,.add-book"));
 for (let container of containers) {
     container.addEventListener("mousedown", () => {
