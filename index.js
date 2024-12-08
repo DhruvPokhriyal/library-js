@@ -1,8 +1,8 @@
 const myLibrary = [];
 const loaded = [];
 
-class Book {
-    constructor(bookName, author, page) {
+class book {
+    constructor(bookName, author, pages) {
         this.bookName = bookName;
         this.author = author;
         this.pages = pages;
