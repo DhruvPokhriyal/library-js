@@ -1,10 +1,12 @@
 const myLibrary = [];
 const loaded = [];
 
-function book(bookName, author, pages) {
-    this.bookName = bookName;
-    this.author = author;
-    this.pages = pages;
+class Book {
+    constructor(bookName, author, page) {
+        this.bookName = bookName;
+        this.author = author;
+        this.pages = pages;
+    }
 }
 
 function toggleEffect(record) {
