@@ -1,7 +1,7 @@
 const myLibrary = [];
 const loaded = [];
 
-class book {
+class Book {
     constructor(bookName, author, pages) {
         this.bookName = bookName;
         this.author = author;
@@ -96,7 +96,7 @@ addBookForm.addEventListener("submit", (e) => {
     if (newBookName == "" || authorName == "" || noOfPages == "") {
         alert("Fields cannot be left empty");
     } else {
-        let newBook = new book(newBookName, authorName, noOfPages);
+        let newBook = new Book(newBookName, authorName, noOfPages);
         myLibrary.push(newBook);
         addBookToLibrary();
     }
