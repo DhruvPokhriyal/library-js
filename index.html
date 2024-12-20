@@ -32,7 +32,7 @@
             <div class="add-book special">Add Book</div>
         </div>
         <dialog id="modal" class="modal">
-            <form method="get" class="add-book-form">
+            <form method="get" class="add-book-form" novalidate>
                 <h3>Add Book</h3>
                 <div class="book-name">
                     <label for="book-name">Book Name *</label>
@@ -43,6 +43,7 @@
                         placeholder="A Study in Scarlet"
                         required
                     />
+                    <span class="error"></span>
                 </div>
                 <div class="author-name">
                     <label for="author-name">Author Name *</label>
@@ -53,6 +54,7 @@
                         placeholder="Arthur Conan Doyle"
                         required
                     />
+                    <span class="error"></span>
                 </div>
                 <div class="pages">
                     <label for="pages">No of Pages *</label>
@@ -64,6 +66,7 @@
                         min="1"
                         required
                     />
+                    <span class="error"></span>
                 </div>
                 <div class="buttons">
                     <button type="button" class="form-close">Close</button

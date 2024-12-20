@@ -74,11 +74,17 @@ for (let book of books) {
 }
 
 let modal = document.querySelector(".modal");
+const newBookField = document.querySelector("#book-name");
+const authorField = document.querySelector("#author-name");
+const pagesField = document.querySelector("#pages");
 
 let formClose = document.querySelector(".form-close");
 formClose.addEventListener("click", () => {
     // Add clear form function here
     document.querySelector(".add-book-form").reset();
+    newBookField.closest("div").querySelector("span").textContent = "";
+    authorField.closest("div").querySelector("span").textContent = "";
+    pagesField.closest("div").querySelector("span").textContent = "";
     modal.close();
 });
 
@@ -87,23 +93,71 @@ addBook.addEventListener("click", () => {
     modal.showModal();
 });
 
-let pagesField = document.querySelector("#pages");
-pagesField.addEventListener("input", () => {
-    if (pagesField.validity.rangeUnderflow) {
-        pagesField.setCustomValidity("No of pages cannot be below 1");
+newBookField.addEventListener("input", () => {
+    const errorBox = newBookField.closest("div").querySelector("span");
+    if (newBookField.validity.valueMissing) {
+        errorBox.textContent = "Book name cannot be left empty";
     } else {
-        pagesField.setCustomValidity("");
+        errorBox.textContent = "";
+    }
+});
+
+authorField.addEventListener("input", () => {
+    const errorBox = authorField.closest("div").querySelector("span");
+    if (authorField.validity.valueMissing) {
+        errorBox.textContent = "Author name cannot be left empty";
+    } else {
+        errorBox.textContent = "";
+    }
+});
+
+pagesField.addEventListener("input", () => {
+    const errorBox = pagesField.closest("div").querySelector("span");
+
+    if (pagesField.validity.rangeUnderflow) {
+        errorBox.textContent = "No of pages cannot be less than 1";
+    } else if (pagesField.validity.valueMissing) {
+        errorBox.textContent = "No of pages cannot be left empty";
+    } else {
+        errorBox.textContent = "";
     }
 });
 
 const addBookForm = document.querySelector(".add-book-form");
 addBookForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    let newBookName = addBookForm.querySelector("#book-name").value;
-    let authorName = addBookForm.querySelector("#author-name").value;
-    let noOfPages = addBookForm.querySelector("#pages").value;
+    let newBookName = newBookField.value;
+    let authorName = authorField.value;
+    let noOfPages = pagesField.value;
     if (newBookName == "" || authorName == "" || noOfPages == "") {
-        alert("Fields cannot be left empty");
+        (function () {
+            const errorBox = newBookField.closest("div").querySelector("span");
+            if (newBookField.validity.valueMissing) {
+                errorBox.textContent = "Book name cannot be left empty";
+            } else {
+                errorBox.textContent = "";
+            }
+        })();
+        (function () {
+            const errorBox = authorField.closest("div").querySelector("span");
+            if (authorField.validity.valueMissing) {
+                errorBox.textContent = "Author name cannot be left empty";
+            } else {
+                errorBox.textContent = "";
+            }
+        })();
+        (function () {
+            const errorBox = pagesField.closest("div").querySelector("span");
+
+            if (pagesField.validity.rangeUnderflow) {
+                errorBox.textContent = "No of pages cannot be less than 1";
+            } else if (pagesField.validity.valueMissing) {
+                errorBox.textContent = "No of pages cannot be left empty";
+            } else {
+                errorBox.textContent = "";
+            }
+        })();
+        return;
     } else {
         let newBook = new Book(newBookName, authorName, noOfPages);
         myLibrary.push(newBook);
