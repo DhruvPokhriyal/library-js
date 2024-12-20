@@ -87,6 +87,15 @@ addBook.addEventListener("click", () => {
     modal.showModal();
 });
 
+let pagesField = document.querySelector("#pages");
+pagesField.addEventListener("input", () => {
+    if (pagesField.validity.rangeUnderflow) {
+        pagesField.setCustomValidity("No of pages cannot be below 1");
+    } else {
+        pagesField.setCustomValidity("");
+    }
+});
+
 const addBookForm = document.querySelector(".add-book-form");
 addBookForm.addEventListener("submit", (e) => {
     e.preventDefault();
