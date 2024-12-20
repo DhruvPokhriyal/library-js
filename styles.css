@@ -251,3 +251,7 @@ button {
 button:hover {
     background-color: #d7dae1;
 }
+
+.add-book-form > div > span {
+    color: red;
+}
