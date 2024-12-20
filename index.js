@@ -85,6 +85,9 @@ formClose.addEventListener("click", () => {
     newBookField.closest("div").querySelector("span").textContent = "";
     authorField.closest("div").querySelector("span").textContent = "";
     pagesField.closest("div").querySelector("span").textContent = "";
+    newBookField.dataset.invalid = false;
+    authorField.dataset.invalid = false;
+    pagesField.dataset.invalid = false;
     modal.close();
 });
 
@@ -94,32 +97,26 @@ addBook.addEventListener("click", () => {
 });
 
 newBookField.addEventListener("input", () => {
-    const errorBox = newBookField.closest("div").querySelector("span");
-    if (newBookField.validity.valueMissing) {
-        errorBox.textContent = "Book name cannot be left empty";
+    if (!newBookField.checkValidity()) {
+        newBookField.dataset.invalid = true;
     } else {
-        errorBox.textContent = "";
+        newBookField.dataset.invalid = false;
     }
 });
 
 authorField.addEventListener("input", () => {
-    const errorBox = authorField.closest("div").querySelector("span");
-    if (authorField.validity.valueMissing) {
-        errorBox.textContent = "Author name cannot be left empty";
+    if (!authorField.checkValidity()) {
+        authorField.dataset.invalid = true;
     } else {
-        errorBox.textContent = "";
+        authorField.dataset.invalid = false;
     }
 });
 
 pagesField.addEventListener("input", () => {
-    const errorBox = pagesField.closest("div").querySelector("span");
-
-    if (pagesField.validity.rangeUnderflow) {
-        errorBox.textContent = "No of pages cannot be less than 1";
-    } else if (pagesField.validity.valueMissing) {
-        errorBox.textContent = "No of pages cannot be left empty";
+    if (!pagesField.checkValidity()) {
+        pagesField.dataset.invalid = true;
     } else {
-        errorBox.textContent = "";
+        pagesField.dataset.invalid = false;
     }
 });
 
@@ -132,28 +129,39 @@ addBookForm.addEventListener("submit", (e) => {
     if (newBookName == "" || authorName == "" || noOfPages == "") {
         (function () {
             const errorBox = newBookField.closest("div").querySelector("span");
-            if (newBookField.validity.valueMissing) {
-                errorBox.textContent = "Book name cannot be left empty";
+            if (!newBookField.checkValidity()) {
+                newBookField.dataset.invalid = true;
+                if (newBookField.validity.valueMissing) {
+                    errorBox.textContent = "Book name cannot be left empty";
+                }
             } else {
+                newBookField.dataset.invalid = false;
                 errorBox.textContent = "";
             }
         })();
         (function () {
             const errorBox = authorField.closest("div").querySelector("span");
-            if (authorField.validity.valueMissing) {
-                errorBox.textContent = "Author name cannot be left empty";
+            if (!authorField.checkValidity()) {
+                authorField.dataset.invalid = true;
+                if (authorField.validity.valueMissing) {
+                    errorBox.textContent = "Author name cannot be left empty";
+                }
             } else {
+                authorField.dataset.invalid = false;
                 errorBox.textContent = "";
             }
         })();
         (function () {
             const errorBox = pagesField.closest("div").querySelector("span");
-
-            if (pagesField.validity.rangeUnderflow) {
-                errorBox.textContent = "No of pages cannot be less than 1";
-            } else if (pagesField.validity.valueMissing) {
-                errorBox.textContent = "No of pages cannot be left empty";
+            if (!pagesField.checkValidity()) {
+                pagesField.dataset.invalid = true;
+                if (pagesField.validity.rangeUnderflow) {
+                    errorBox.textContent = "No of pages cannot be less than 1";
+                } else if (pagesField.validity.valueMissing) {
+                    errorBox.textContent = "No of pages cannot be left empty";
+                }
             } else {
+                pagesField.dataset.invalid = false;
                 errorBox.textContent = "";
             }
         })();
